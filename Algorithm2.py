@@ -23,8 +23,8 @@ with open('/Users/angelgonzalezguevara/Downloads/pswrgvwall.csv','r') as file:
     x.pop()
     x2.pop()
 
-with open('/Users/angelgonzalezguevara/Documents/Crude Oil'
-          '/Data 1-Table 1.csv','r') as file:
+with open('/Users/angelgonzalezguevara/Desktop/Math_150_code'
+          '/Data 1-Table 1CO.csv','r') as file:
     reader = csv.reader(file)
     next(reader)
     next(reader)
@@ -50,11 +50,6 @@ datesforR2 = np.array(datesforR2).reshape(-1,1)
 
 datesforCr = np.array(datesforCr).reshape(-1,1)
 
-ypred = sk.LinearRegression().fit(datesforR2,x2int).predict(datesforR2)
-rsqu = sk.LinearRegression().fit(datesforR2,x2int).score(datesforR2,x2int)
-
-ypredCR = sk.LinearRegression().fit(datesforCr,x2Cr).predict(datesforCr)
-rsquCR = sk.LinearRegression().fit(datesforCr,x2Cr).score(datesforCr,x2Cr)
 
 xgasp =[]
 xcrudep = []
@@ -120,11 +115,7 @@ for i in list(range(len(xcrudepr))):
 datesforCr = [dt.datetime.strptime(date, '%b %d, %Y') for date in xdates]
 
 
-# Show plot
-plt.figure()
-plt.plot(dateforGasprice,gasprices, label = "Gas Price (scaled up 10x)")
-plt.plot(dateforGasprice,crudeoilprices,label = "Crude Oil Price")
-plt.legend()
+# Show Plot
 plt.figure()
 plt.title("Crude Oil Prices(1994-Present)")
 plt.xlabel("Time")
@@ -137,6 +128,7 @@ plt.legend()
 plt.show()
 
 ###########################
+# Find Corr. coeff. , something a part from EMA
 maxofp = []
 
 dates_ = [dt.datetime.strptime(date, '%b %d, %Y').timestamp() for date in xdate]
