@@ -136,7 +136,6 @@ plt.show()
 # Find Corr. coeff. , something a part from EMA
 maxofp = []
 
-dates_ = [dt.datetime.strptime(date, '%b %d, %Y').timestamp() for date in xdate]
 
 
 for i in range(1,56):
