@@ -7,6 +7,11 @@ import sklearn.linear_model as sk
 import sklearn.cluster as skc
 import random
 
+################
+# For reading the file, change according to respective directory for 
+# pswrgvwall.csv and Data 1-Table 1CO.csv
+
+###############
 with open('/Users/angelgonzalezguevara/Downloads/pswrgvwall.csv','r') as file:
     reader = csv.reader(file)
     next(reader)
